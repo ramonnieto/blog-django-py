@@ -4,6 +4,9 @@ USER root
 
 COPY . /tmp/src
 
+RUN yum install epel-release && \
+    yum install python-pip
+
 RUN mv /tmp/src/.s2i/bin /tmp/scripts
 
 RUN rm -rf /tmp/src/.git* && \
