@@ -5,7 +5,8 @@ USER root
 COPY . /tmp/src
 
 RUN yum install epel-release && \
-    yum install python-pip
+    yum install python-pip && \
+    pip install --upgrade pip
 
 RUN mv /tmp/src/.s2i/bin /tmp/scripts
 
